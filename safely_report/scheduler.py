@@ -1,5 +1,6 @@
 from time import time
 
+from flask import current_app
 from flask_apscheduler import APScheduler
 from flask_session import FileSystemSessionInterface
 
@@ -13,4 +14,4 @@ def clear_expired_sessions():
         interface = scheduler.app.session_interface
         assert isinstance(interface, FileSystemSessionInterface)
         interface.cache._remove_expired(now=time())
-        # TODO: Add logging
+        current_app.logger.info("Expired sessions have been cleared")
