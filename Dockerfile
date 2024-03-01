@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . .
 
-CMD ["/bin/sh", "docker-entrypoint.sh"]
+CMD ["sh", "docker-entrypoint.sh"]
