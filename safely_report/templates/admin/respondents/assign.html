@@ -1,17 +1,19 @@
 {% extends 'admin/model/list.html' %}
 
 {% block body %}
-  <form method="POST">
-    <div>
-      {{ form.hidden_tag() }}
-      {{ form.field.label }}
-      {{ form.field(class="form-control") }}
-    </div>
-    <div>
-      <a href="{{ url_for('respondents.index_view') }}" class="btn btn-secondary">
-        Cancel
-      </a>
-      {{ form.submit(class="btn btn-primary") }}
-    </div>
-  </form>
+  <div class="text-center" style="margin: 50px;">
+    <form method="POST">
+      <div>
+        {{ form.hidden_tag() }}
+        {{ form.field.label }}
+        {{ form.field(class="form-control") }}
+      </div>
+      <div>
+        <a href="{{ url_for('respondents.index_view') }}" class="btn btn-secondary">
+          Cancel
+        </a>
+        {{ form.submit(class="btn btn-primary") }}
+      </div>
+    </form>
+  </div>
 {% endblock %}
