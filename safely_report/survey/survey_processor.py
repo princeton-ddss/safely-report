@@ -133,7 +133,6 @@ class SurveyProcessor(XLSFormFunctions):
             return True
         formula_py = self._translate_xlsform_formula(formula)
 
-        # TODO: Perform proper error handling
         return eval(formula_py)
 
     @property
@@ -339,7 +338,6 @@ class SurveyProcessor(XLSFormFunctions):
             return True
         formula_py = self._translate_xlsform_formula(formula)
 
-        # TODO: Perform proper error handling
         return eval(formula_py)
 
     def _get_element(self, element_name: str) -> SurveyElement:
