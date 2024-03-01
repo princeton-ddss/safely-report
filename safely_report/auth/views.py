@@ -10,7 +10,6 @@ from flask_login import current_user, login_required, login_user
 
 from safely_report.auth.utils import logout_and_clear, make_auth_form
 from safely_report.models import Role, User
-from safely_report.settings import ADMIN_PASSWORD
 
 auth_blueprint = Blueprint("auth", __name__)
 
@@ -65,7 +64,7 @@ def login_admin():
 
     if form.validate_on_submit():
         password = form.field.data
-        if password == ADMIN_PASSWORD:
+        if password == current_app.config["ADMIN_PASSWORD"]:
             user = User.get_admin()
             login_user(user)
             current_app.logger.info(f"Login - user {user.id}")
