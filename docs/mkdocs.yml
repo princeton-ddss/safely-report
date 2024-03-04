@@ -2,7 +2,7 @@ docs_dir: mkdocs
 site_name: Safely Report
 repo_name: princeton-ddss/safely-report
 repo_url: https://github.com/princeton-ddss/safely-report
-copyright: Copyright &copy; 2023 - 2024 Princeton University
+copyright: Copyright &copy; 2023-2024 The Trustees of Princeton University
 
 theme:
   name: material
