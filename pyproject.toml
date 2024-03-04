@@ -2,6 +2,7 @@
 name = "safely-report"
 version = "0.1.0"
 description = "A survey web application that can provide plausible deniability to survey respondents"
+license = "MIT"
 authors = ["Sangyoon Park <datumvitae@gmail.com>"]
 readme = "README.md"
 
