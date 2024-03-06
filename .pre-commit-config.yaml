@@ -3,26 +3,14 @@
 # We use local hooks so that we don't pass the changed filenames in as args,
 # so that the ignores we defined in the configs work
 repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.0
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
   - repo: local
     hooks:
-      - id: flake8
-        name: flake8
-        entry: flake8 .
-        language: python
-        types: [python]
-        pass_filenames: false
-      - id: isort
-        name: isort
-        entry: isort .
-        language: python
-        types: [python]
-        pass_filenames: false
-      - id: black
-        name: black
-        entry: black .
-        language: python
-        types: [python]
-        pass_filenames: false
       - id: mypy
         name: mypy
         entry: mypy .
