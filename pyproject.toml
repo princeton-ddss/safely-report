@@ -34,6 +34,9 @@ mkdocs-material = "^9.5.7"
 exclude = ["tests", "migrations"]
 line-length = 79
 
+[tool.ruff.lint]
+select = ["F", "E", "W", "I"]
+
 [tool.mypy]
 exclude = ["migrations"]
 
