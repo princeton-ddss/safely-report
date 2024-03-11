@@ -22,13 +22,13 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-mock pytest-dotenv
           pip install ruff mypy
-      - name: Run pytest
+      - name: Run testing
         run: |
           pytest tests
-      - name: Run ruff
+      - name: Run linting and formatting
         run: |
           ruff check .
           ruff format .
-      - name: Run mypy
+      - name: Run type checking
         run: |
           mypy --ignore-missing-imports .
