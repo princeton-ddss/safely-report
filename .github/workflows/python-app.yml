@@ -20,6 +20,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pre-commit pytest
+      - name: Set up environment variables
+        run: |
+          cp .env.test .env
       - name: Run pre-commit hooks
         run: |
           pre-commit run --all-files
