@@ -1,0 +1,18 @@
+name: Docker image
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: |
+          docker build -t princetonddss/safely-report .
+      - name: Publish image
+        run: |
+          docker login -u yoonspark -p ${{ secrets.DOCKER_HUB_TOKEN }}
+          docker push princetonddss/safely-report
