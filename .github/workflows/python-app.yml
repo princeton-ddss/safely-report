@@ -27,6 +27,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      - run: |
+          pwd
+          pip list
+
       - name: Install dependencies
         if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
