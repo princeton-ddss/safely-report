@@ -36,18 +36,20 @@ jobs:
           pip install pytest pytest-mock pytest-dotenv
           pip install ruff mypy
 
-      - name: Run testing
+      - name: Activate virtual environment
         run: |
           source venv/bin/activate
+          echo PATH=$PATH >> $GITHUB_ENV
+
+      - name: Run testing
+        run: |
           pytest tests
 
       - name: Run linting and formatting
         run: |
-          source venv/bin/activate
           ruff check .
           ruff format .
 
       - name: Run type checking
         run: |
-          source venv/bin/activate
           mypy --ignore-missing-imports .
