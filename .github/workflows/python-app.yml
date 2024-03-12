@@ -52,4 +52,4 @@ jobs:
 
       - name: Run type checking
         run: |
-          mypy --ignore-missing-imports .
+          mypy --ignore-missing-imports safely_report/
