@@ -19,21 +19,19 @@ jobs:
           python-version: "3.9"
 
       - name: Cache dependencies
-        id: cache-pip
+        id: cache-deps
         uses: actions/cache@v3
         with:
-          path: ~/.cache/pip
+          path: venv
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - run: |
-          pwd
-          pip list
-
       - name: Install dependencies
-        if: steps.cache-pip.outputs.cache-hit != 'true'
+        if: steps.cache-deps.outputs.cache-hit != 'true'
         run: |
+          python -m venv venv
+          source venv/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-mock pytest-dotenv
@@ -41,13 +39,16 @@ jobs:
 
       - name: Run testing
         run: |
+          source venv/bin/activate
           pytest tests
 
       - name: Run linting and formatting
         run: |
+          source venv/bin/activate
           ruff check .
           ruff format .
 
       - name: Run type checking
         run: |
+          source venv/bin/activate
           mypy --ignore-missing-imports .
