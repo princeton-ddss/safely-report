@@ -10,6 +10,12 @@
     </div>
   {% endif %}
 
+  {% if not is_testing_mode %}
+    <div class="alert alert-info text-center" role="alert">
+      NOTE: Leaving the survey without submitting will result in lost responses
+    </div>
+  {% endif %}
+
   <div class="d-flex justify-content-center">
     {% set message = "Sure to exit? Progress will not be saved." %}
     <a
