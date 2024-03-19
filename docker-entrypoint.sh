@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Synchronize database schema
+flask db migrate -m "Sync"
 flask db upgrade
 
 # Launch application
