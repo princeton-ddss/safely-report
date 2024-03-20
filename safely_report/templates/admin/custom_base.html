@@ -1,5 +1,10 @@
 {% extends "admin/base.html" %}
 
+{% block head_css %}
+  {{ super() }}
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
 {% block access_control %}
   <div class="pull-right">
     <a
