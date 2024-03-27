@@ -31,16 +31,19 @@ theme:
 
 markdown_extensions:
   - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
   - tables
   - toc:
       permalink: true
 
 plugins:
   - search
-
-markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
 
 extra_javascript:
   - javascripts/mathjax.js
@@ -49,3 +52,15 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Quickstart: quickstart.md
+  - Concepts:
+    - Garbling: concepts/garbling.md
+  - Guides:
+    - Creating Survey: guides/create-survey.md
+    - Deploying App: guides/deploy-app.md
+    - Analyzing Results: guides/analyze-results.md
+    - Getting Help: guides/get-help.md
+  - Contributing:
+    - Contribution Process: contributing/process.md
+    - Setup and Basics: contributing/setup.md
+    - Recommended Practices: contributing/tips.md
