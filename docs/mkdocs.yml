@@ -64,3 +64,4 @@ nav:
     - Contribution Process: contributing/process.md
     - Setup and Basics: contributing/setup.md
     - Recommended Practices: contributing/tips.md
+    - Overview of Codebase: contributing/codebase.md
