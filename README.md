@@ -37,4 +37,4 @@ Then, visit `http://0.0.0.0:80` to access the application (use `devpassword` to 
 ## What Next?
 
 If you want to learn more about Safely Report, please check out the official project
-[documentation](https://safely-report.netlify.app/).
+[documentation](https://princeton-ddss.github.io/safely-report/).
