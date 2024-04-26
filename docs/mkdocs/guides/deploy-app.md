@@ -6,10 +6,14 @@
     familiar with deployment technologies (e.g., Docker).
 
 The deployment method can vary based on available resources and personal preferences,
-making it impractical to address every detail. Hence, this guide focuses on *one* approach
-utilizing Docker, which should serve as a reference for alternative methods.
+making it impractical to address every detail. Hence, this guide provides:
 
-## 1. Prepare survey files to use
+- General instructions that can be adapted to different deployment environments
+- Example of deployment on [Render](https://render.com/), a cloud platform that is relatively easy to use
+
+## General Instructions
+
+### 1. Prepare survey files to use
 
 First, make sure you have the following files required for a survey:
 
@@ -25,7 +29,7 @@ First, make sure you have the following files required for a survey:
 Then, place these files in a designated location on the host machine (e.g., `/survey/files/`),
 which will later be mounted to the Docker container.
 
-## 2. Define environment variables
+### 2. Define environment variables
 
 Create `.env` file defining the following environment variables:
 
@@ -45,7 +49,7 @@ Create `.env` file defining the following environment variables:
     and roster files are mounted to the container's `/app/data/` folder, the path variables should all
     reference this location (e.g., `XLSFORM_PATH=/app/data/xlsform.xlsx`).
 
-## 3. Start a Docker container
+### 3. Start a Docker container
 
 Finally, start the Docker container by running:
 
@@ -65,3 +69,35 @@ where
 
 Note that the command above is provided as an example &mdash; please feel free to update it
 with any other options (e.g., restart policy).
+
+## Example: Deployment on Render
+
+[Render](https://render.com/) is a cloud platform that provides relatively easy-to-use
+web hosting services.
+
+### 1. Sign up for Render
+
+Create a new account [here](https://dashboard.render.com/register) if you do not have one.
+
+### 2. Deploy Database
+
+Follow instructions [here](https://docs.render.com/databases#create-your-database) to deploy
+a PostgreSQL database.
+
+### 3. Deploy Web Application
+
+Follow instructions [here](https://docs.render.com/web-services#deploy-from-a-container-registry)
+to deploy Safely Report from the Docker image.
+
+- Use `docker.io/princetonddss/safely-report:demo` for the image URL.
+
+- Set up a persistent disk following instructions [here](https://docs.render.com/disks#setup).
+Then, follow instructions [here](https://docs.render.com/disks#transferring-files) to upload
+XLSForm and roster files to the persistent disk, which makes these files accessible to the
+application across deploys and restarts.
+
+- Define environment variables outlined [above](#2-define-environment-variables).
+For files stored in the persistent disk (e.g., XLSForm), make sure to use the correct mount path
+in the corresponding environment variables.
+Follow instructions [here](https://docs.render.com/databases#connect-to-your-database)
+to specify the correct database URI.
