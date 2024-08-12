@@ -1,3 +1,9 @@
+# coverage
+.coverage
+
+# PyCharm
+.idea
+
 # Flask
 instance/
 .flask_sessions/

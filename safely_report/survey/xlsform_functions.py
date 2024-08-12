@@ -1,5 +1,9 @@
 from typing import Any
 
+from flask_login import current_user
+
+from safely_report.models import Respondent, Role
+
 
 class XLSFormFunctions:
     """
@@ -29,3 +33,36 @@ class XLSFormFunctions:
             return choice_array[index]
         except IndexError:
             return ""
+
+    @classmethod
+    def _str2int(cls, value: str) -> int:
+        return int(value)
+
+    @classmethod
+    def _pulldata(cls, column: str, default: str) -> str:
+        """
+        Pull data from 'column' in the respondent roster table.
+
+        Parameters
+        ----------
+        column: str
+            Name of the field you want to retrieve
+        default: str
+            Default value in case the field is not available,
+            or the user is an Enumerator
+
+        Returns
+        -------
+        str
+            Field value if available, default otherwise
+        """
+        if current_user.role != Role.Respondent:
+            return default
+
+        respondent_uuid = current_user.uuid
+        respondent = Respondent.query.filter_by(uuid=respondent_uuid).first()
+
+        if hasattr(respondent, column):
+            return getattr(respondent, column)
+        else:
+            return default
