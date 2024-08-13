@@ -2,6 +2,7 @@
 
 [![python](https://img.shields.io/badge/Python-3.9-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/695210361.svg)](https://zenodo.org/doi/10.5281/zenodo.13308418)
 
 ## Overview
 
@@ -38,3 +39,10 @@ Then, visit `http://0.0.0.0:80` to access the application (use `devpassword` to 
 
 If you want to learn more about Safely Report, please check out the official project
 [documentation](https://princeton-ddss.github.io/safely-report/).
+
+## Citation
+
+The software is free to use under the [MIT License](https://opensource.org/licenses/MIT).
+Please use the following DOI for citation:
+
+[![DOI](https://zenodo.org/badge/695210361.svg)](https://zenodo.org/doi/10.5281/zenodo.13308418)
