@@ -58,7 +58,7 @@ docker run -d \
     -p [HOST-PORT]:80 \
     -v [PATH-TO-SURVEY-FILES]:/app/data \
     --env-file=[PATH-TO-ENV-FILE] \
-    princetonddss/safely-report:demo
+    princetonddss/safely-report
 ```
 
 where
@@ -89,7 +89,7 @@ a PostgreSQL database.
 Follow instructions [here](https://docs.render.com/web-services#deploy-from-a-container-registry)
 to deploy Safely Report from the Docker image.
 
-- Use `docker.io/princetonddss/safely-report:demo` for the image URL.
+- Use `docker.io/princetonddss/safely-report` for the image URL.
 
 - Set up a persistent disk following instructions [here](https://docs.render.com/disks#setup).
 Then, follow instructions [here](https://docs.render.com/disks#transferring-files) to upload
