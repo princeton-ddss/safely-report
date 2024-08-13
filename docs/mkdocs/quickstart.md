@@ -10,7 +10,7 @@ The easiest way to test out `safely-report` is through running a Docker containe
 Once Docker is available, run:
 
 ```bash
-docker run -p 80:80 princetonddss/safely-report:demo sh -c "cp .env.dev .env && sh docker-entrypoint.sh"
+docker run -p 80:80 princetonddss/safely-report sh -c "cp .env.dev .env && sh docker-entrypoint.sh"
 ```
 
 Then, visit `http://0.0.0.0:80` to access the application (use `devpassword` to sign in as admin).
